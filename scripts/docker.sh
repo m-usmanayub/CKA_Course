@@ -1,3 +1,4 @@
+#!/bin/bash
 # (Install Docker CE)
 ## Set up the repository:
 ### Install packages to allow apt to use a repository over HTTPS
