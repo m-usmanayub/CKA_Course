@@ -10,6 +10,8 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sudo sysctl --system
 
+systemctl disable ufw
+systemctl stop ufw
 
 # update the system and reboot
 sudo apt update && sudo apt upgrade -y
