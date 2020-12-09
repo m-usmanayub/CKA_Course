@@ -7,7 +7,9 @@
 <p>
 
 ```bash
-Ans
+kubectl get pods 
+  
+kubectl get pods -A (for all namespaces)
 ```
 </p>
 </details>
@@ -17,7 +19,9 @@ Ans
 <p>
 
 ```bash
-Ans
+ kubectl get replicasets
+ 
+ kubectl get replicasets --all-namespaces
 ```
 </p>
 </details>
@@ -27,7 +31,10 @@ Ans
 <p>
 
 ```bash
-Ans
+
+kubectl get deployments
+
+kubectl get deployments --all-namespaces
 ```
     
 </p>
@@ -39,7 +46,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl create deployment nginx-deploy --dry-run=client -o yaml > nginx-deploy.yaml
 ```
 </p>
 </details>
@@ -49,7 +56,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl apply -f nginx-deploy.yaml
 ```
 </p>
 </details>
@@ -59,7 +66,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl scale deployment nginx-deploy --replicas=3
 ```
 </p>
 </details>
@@ -69,7 +76,7 @@ Ans
 <p>
 
 ```bash
-Ans 
+kubectl get replicasets 
 ```
 </p>
 </details>
@@ -79,7 +86,7 @@ Ans
 <p>
 
 ```bash
-Ans 
+Fix the kind in the yaml file with Deployment
 ```
 </p>
 </details>
