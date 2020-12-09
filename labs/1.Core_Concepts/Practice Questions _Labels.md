@@ -7,8 +7,9 @@
 <p>
 
 ```bash
-Ans
-
+kubectl run nginx1 --image=nginx --restart=Never --labels=app=v1
+kubectl run nginx2 --image=nginx --restart=Never --labels=app=v1
+kubectl run nginx3 --image=nginx --restart=Never --labels=app=v1
 
 ```
 </p>
@@ -20,7 +21,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get po --show-labels
 ```
 </p>
 </details>
@@ -31,7 +32,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl label po nginx2 app=v2 --overwrite
 ```
 </p>
 </details>
@@ -42,7 +43,9 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get po -L app
+# or
+kubectl get po --label-columns=app
 ```
 </p>
 </details>
@@ -52,7 +55,11 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get po -l app=v2
+# or
+kubectl get po -l 'app in (v2)'
+# or
+kubectl get po --selector=app=v2
 ```
 </p>
 </details>
@@ -62,7 +69,11 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl label po nginx1 nginx2 nginx3 app-
+# or
+kubectl label po nginx{1..3} app-
+# or
+kubectl label po -l app app-
 ```
 </p>
 </details>
@@ -72,8 +83,24 @@ Ans
 <p>
 
 ```bash
-Ans
+       kubectl label nodes <your-node-name> gpu=nvidia
+
+          
+         kubectl get nodes --show-labels
+         
+         
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cuda-test
+spec:
+  containers:
+    - name: cuda-test
+      image: "k8s.gcr.io/cuda-vector-add:v0.1"
+  nodeSelector: # add this
+    gpu: nvidia # the selection label
 ```
+
 </p>
 </details>
 
@@ -82,7 +109,12 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl annotate po nginx1 nginx2 nginx3 description='web server'
+
+#or
+
+kubectl annotate po nginx{1..3} description='web server'
+
 ```
 </p>
 </details>
@@ -92,7 +124,12 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl describe po nginx1 | grep -i 'annotations'
+
+# or
+
+kubectl get pods -o custom-columns=Name:metadata.name,ANNOTATIONS:metadata.annotations.description
+
 ```
 </p>
 </details>
@@ -101,7 +138,8 @@ Ans
 <p>
 
 ```bash
-Ans
+
+kubectl annotate po nginx{1..3} description-
 ```
 </p>
 </details>
