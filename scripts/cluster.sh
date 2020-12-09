@@ -1,6 +1,6 @@
 #!/bin/bash
 kubeadm config images pull
-kubeadm init --control-plane-endpoint "cka.lab.local:6443" --upload-certs 
+kubeadm init --control-plane-endpoint "sxx.k8s.local:6443" --upload-certs 
 
 sleep 30
 
