@@ -7,7 +7,8 @@
 <p>
 
 ```bash
-Ans
+kubectl explain rs | grep VERSION
+
 
 ```
 </p>
@@ -18,7 +19,7 @@ Ans
 <p>
 
 ```bash
-Ans
+Match the labels on the selector and pod template in the defintion file
 ```
 </p>
 </details>
@@ -29,7 +30,11 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl edit replicaset new-replica-set 
+
+or 
+  
+kubectl scale rs replicaset-1 --replicas=5
 ```
 </p>
 </details>
@@ -40,7 +45,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl scale replicaset replicaset-1 --replicas=2
 ```
 </p>
 </details>
