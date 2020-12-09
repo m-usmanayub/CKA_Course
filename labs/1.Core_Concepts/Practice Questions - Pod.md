@@ -1,6 +1,7 @@
 ## Lab 1 - Pods
 
 1.   How many pods exists in the system
+      
       a. In kube-system namespace
      
 
