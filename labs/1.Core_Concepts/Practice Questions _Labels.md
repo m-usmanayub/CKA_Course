@@ -9,7 +9,7 @@
 ```bash
 Ans
 
-kubectl describe pods --namespace=cka-lab3 | grep --context=10 'author=Matthew Palmer'
+
 ```
 </p>
 </details>
