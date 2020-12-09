@@ -1,4 +1,5 @@
-## Lab 1 - Pods
+## Lab 1 - Practice Questions - Pod
+
 
 1.   How many pods exists in the system
       
@@ -136,10 +137,10 @@ kubectl run cka --image=consul
 9. Create a pod with image redis using yaml definition file
 <details><summary>Show</summary>
 <p>
+   vim redis.yaml
     
-```bash
-vim redis.yaml
 ```yaml
+
 apiVersion: v1
 kind: Pod
 metadata: 
@@ -149,5 +150,6 @@ spec:
   - image: redis
     name: redis
 ```
+
 </p>
 </details>
