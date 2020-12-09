@@ -1,7 +1,7 @@
 ## Lab 2 - Labels and Selectors
 
 
-1.  1.  How many PODs exist in the 'dev' environment?
+1.How many PODs exist in the 'dev' environment?
 
 <details><summary>Show</summary>
 <p>
