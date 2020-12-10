@@ -32,7 +32,7 @@ kubectl create namespace cka-lab1
     <p>
     
     ```bash
-    kubectl  run pod-b --image=nginx --namespace=cka-lab1 --dry-run=client -o yaml > pod-b.yaml
+    kubectl  run pod-b --image=nginx:alpine --dry-run=client -o yaml > pod-b.yaml
     ```
     
     </p>
