@@ -71,7 +71,7 @@ k describe svc kubernetes
   <details><summary>Show</summary>
 <p>
 
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -104,7 +104,7 @@ spec:
   <details><summary>Show</summary>
 <p>
 
-```bash
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -118,7 +118,6 @@ spec:
     targetPort: 8080
   selector:
     name: simple-webapp
-  sessionAffinity: None
   type: NodePort
 ```
 </p>
