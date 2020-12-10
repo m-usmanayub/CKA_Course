@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-color-service
+spec:
+  ports:
+  - nodePort: 30080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: webapp-color
+  type: NodePort
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp-color
+  namespace: default
+  labels:
+    name: webapp-color
+spec:
+  containers:
+  - env:
+    - name: APP_COLOR
+      value: pink
+    image: kodekloud/webapp-color
+    imagePullPolicy: Always
+    name: webapp-color
