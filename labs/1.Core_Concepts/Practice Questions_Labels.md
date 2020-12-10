@@ -83,12 +83,11 @@ kubectl label po -l app app-
 <p>
 
 ```bash
-       kubectl label nodes <your-node-name> gpu=nvidia
-
-          
-         kubectl get nodes --show-labels
-         
-         
+kubectl label nodes <your-node-name> gpu=nvidia
+        
+kubectl get nodes --show-labels
+```         
+```yaml         
 apiVersion: v1
 kind: Pod
 metadata:
