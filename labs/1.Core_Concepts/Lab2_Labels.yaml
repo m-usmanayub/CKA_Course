@@ -1,0 +1,116 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    env: dev
+  name: app-dev
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: dev
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        bu: finance
+        env: dev
+        tier: frontend
+      name: app
+    spec:
+      containers:
+      - command:
+        - sleep
+        - "4800"
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        name: busybox:1.28.4
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    env: prod
+  name: app-prod
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchExpressions:
+    - key: bu
+      operator: DoesNotExist
+    matchLabels:
+      env: prod
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        env: prod
+        tier: frontend
+      name: app
+    spec:
+      containers:
+      - command:
+        - sleep
+        - "4800"
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        name: busybox:1.28.4
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    env: dev
+  name: db-dev
+  namespace: default
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      env: dev
+      tier: db
+  template:
+    metadata:
+      labels:
+        env: dev
+        tier: db
+      name: db
+    spec:
+      containers:
+      - command:
+        - sleep
+        - "4800"
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        name: busybox:1.28.4
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    env: prod
+  name: db-prod
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: prod
+      tier: db
+  template:
+    metadata:
+      labels:
+        bu: finance
+        env: prod
+        tier: db
+      name: db
+    spec:
+      containers:
+      - command:
+        - sleep
+        - "4800"
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        name: busybox:1.28.4
