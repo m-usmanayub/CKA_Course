@@ -1,0 +1,55 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata: 
+  name: cka-lab3
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod1
+  namespace: cka-lab3
+  labels:
+    app: alpine
+  annotations:
+    commit: 064dd40d5
+    author: Neave Cortez
+    build: Shayna Finch
+spec:
+  containers:
+    - image: alpine
+      name: alpine
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod2
+  namespace: cka-lab3
+  labels:
+    app: alpine
+  annotations:
+    commit: 03b6df416
+    author: jason Page
+    build: Yasin Parra
+spec:
+  containers:
+    - image: alpine
+      name: alpine
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod3
+  namespace: cka-lab3
+  labels:
+    app: alpine
+  annotations:
+    commit: c6b0806
+    author: Laith Reynolds
+    build: Aran Lloyd
+spec:
+  containers:
+    - image: alpine
+      name: alpine
