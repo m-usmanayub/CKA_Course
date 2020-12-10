@@ -41,13 +41,14 @@ kubectl apply -f Lab4_ReplicaSet.yaml
 <p>
 
 ```bash
-     kubectl get pods 
- 
+kubectl get pods 
+``` 
 and check the Pods relevant to ReplicaSet
 or 
-    kubectl get replicaset 
+```bash
+kubectl get replicaset
+```    
 and check the output
-```
 </p>
 </details>
 
@@ -56,7 +57,7 @@ and check the output
 <p>
 
 ```bash
-kubectl describe replicaset <>
+kubectl describe replicaset new-rs
 ```
 </p>
 </details>
