@@ -16,7 +16,7 @@ kubectl create ns cka-lab5
   <details><summary>Show</summary>
 <p>
 
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -37,9 +37,10 @@ spec:
       containers:
       - image: nginx:1.16
         name: nginx
+```              
+```bash                    
+kubectl apply -f deploy1.yaml -n cka-lab5
 ```
-                     kubectl apply -f deploy1.yaml -n cka-lab5
-
 </p>
 </details>
 
@@ -49,7 +50,7 @@ spec:
   <details><summary>Show</summary>
 <p>
 
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -61,7 +62,6 @@ spec:
   selector:
     matchLabels:
       app: httpd-fe
-  strategy: {}
   template:
     metadata:
       labels:
@@ -71,7 +71,9 @@ spec:
       - image: httpd:2.4-alpine
         name: httpd
 ```
-       kubectl apply -f deploy2.yaml --namespace=cka-lab5      
+```bash
+kubectl apply -f deploy2.yaml --namespace=cka-lab5      
+```
 </p>
 </details>
 
