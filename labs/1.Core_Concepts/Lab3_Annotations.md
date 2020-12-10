@@ -10,7 +10,7 @@ Find that pod.
 ```bash
 You may use kubectl get pods -o yaml
 
-kubectl describe pods --namespace=cka-lab3 | grep --context=10 'author=Jason Page'
+kubectl describe pods --namespace=cka-lab3 | grep --context=10 'author: Jason Page'
 ```
 </p>
 </details>
