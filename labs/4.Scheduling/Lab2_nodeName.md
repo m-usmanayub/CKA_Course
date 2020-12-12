@@ -16,7 +16,8 @@ Ans
   
 
 2.  Create a pod using image httpd in the namespace which must be manually scheduled on worker node using nodeName property.
-    <details><summary>Show</summary>
+  
+<details><summary>Show</summary>
 <p>
 
 ```yaml
