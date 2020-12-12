@@ -1,8 +1,10 @@
 ## Lab 3 : Node Affinity
 
-1.  What are the values set to the label beta.kubernetes.io/arch and beta.kubernetes.io/os
+1.  What are the values set to the label beta.kubernetes.io/arch and beta.kubernetes.io/os .
     
-    <details><summary>Show</summary>
+
+<details> <summary> Show </summary>
+
 <p>
 
 ```bash
