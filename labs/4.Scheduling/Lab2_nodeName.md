@@ -1,4 +1,4 @@
-Lab 2 : nodeName and nodeSelector
+## Lab 2 : nodeName and nodeSelector
 
 1.  Create a namespace cka-lab15.
 
