@@ -9,7 +9,10 @@
 <p>
 
 ```yaml
-Ans
+ip addr
+
+ip link 
+
 ```
 
 </p>
@@ -22,7 +25,7 @@ Ans
 <p>
 
 ```yaml
-Ans
+ss -ntl
 ```
 
 </p>
@@ -34,7 +37,7 @@ Ans
 <p>
 
 ```yaml
-Ans
+Go to location /etc/kubernetes/manifests/ and see the yaml files
 ```
 
 </p>
