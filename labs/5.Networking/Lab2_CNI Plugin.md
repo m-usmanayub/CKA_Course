@@ -7,7 +7,7 @@
 <p>
 
 ```bash
-Ans
+To go /etc/cni/net.d and check the file there.
 ```
 
 </p>
@@ -20,7 +20,7 @@ Ans
 <p>
 
 ```bash
-Ans
+Check /opt/cni/bin directory
 ```
 
 </p>
@@ -33,7 +33,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get pods -n kube-system 
 ```
 
 </p>
@@ -45,7 +45,7 @@ Ans
 <p>
 
 ```bash
-Ans
+ip addr
 ```
 
 </p>
@@ -58,9 +58,13 @@ Ans
   <details><summary>Show</summary>
 <p>
 
+
+The network is configured with weave. Check the weave pods logs using command 
 ```bash
-Ans
+kubectl logs <weave-pod-name> weave -n kube-system
 ```
+and look for ipalloc-range
+
 
 </p>
 </details>
@@ -70,8 +74,11 @@ Ans
 <details><summary>Show</summary>
 <p>
 
+
+Inspect the setting on kube-api server by running on command
 ```bash
-Ans
+cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep cluster-ip-range
+
 ```
 
 </p>
