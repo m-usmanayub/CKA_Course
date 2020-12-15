@@ -123,7 +123,7 @@ Change the memory limit in the definition file to 20Mi
 <p>
 
 ```bash
-Ans
+kubectl delete pods 
 ```
 
 </p>
