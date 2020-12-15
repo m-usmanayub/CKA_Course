@@ -37,7 +37,31 @@ spec:
 <p>
 
 ```yaml
-Ans
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memtest
+  namespace: default
+spec:
+  containers:
+  - args:
+    - --vm
+    - "1"
+    - --vm-bytes
+    - 15M
+    - --vm-hang
+    - "1"
+    command:
+    - stress
+    image: polinux/stress
+    imagePullPolicy: Always
+    name: mem-stress
+    resources:
+      limits:
+        memory: 10Mi
+      requests:
+        memory: 5Mi
+
 ```
 
 </p>
