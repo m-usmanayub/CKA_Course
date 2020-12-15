@@ -9,7 +9,21 @@
 <p>
 
 ```yaml
-Ans
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: redis
+  name: redis
+spec:
+  containers:
+  - image: redis
+    name: redis
+    resources:
+      limits:
+        cpu: "1"
+      requests:
+        cpu: 500m
 ```
 
 </p>
@@ -36,8 +50,8 @@ Ans
 <details><summary>Show</summary>
 <p>
 
-```bash
-Ans
+```
+Pod is not running
 ```
 
 </p>
@@ -51,8 +65,9 @@ Ans
 <details><summary>Show</summary>
 <p>
 
-```bash
-Ans
+```
+
+
 ```
 
 </p>
@@ -67,7 +82,10 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl delete pods <>
+
+Change the memory limit in the definition file to 20Mi
+
 ```
 
 </p>
@@ -97,7 +115,20 @@ Ans
 <p>
 
 ```yaml
-Ans
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+  - image: nginx:1.19.5-alpine
+    name: nginx
+    resources:
+      requests:
+        cpu: 500m
+        memory: 100Mi
 ```
 
 </p>
