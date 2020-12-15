@@ -9,8 +9,9 @@
 <p>
 
 ```bash
-Ans
+kubecl get pods -n kube-system 
 ```
+Check for CoreDNS Pods running
 
 </p>
 </details>
@@ -21,7 +22,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get svc -n kube-system
 ```
 
 </p>
@@ -33,7 +34,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get svc -n kube-system and check the service IP
 ```
 
 </p>
