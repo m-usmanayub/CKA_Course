@@ -8,11 +8,9 @@
 <p>
 
 ```bash
-To Remove the master node taint
-     kubectl taint nodes --all node-role.kubernetes.io/master-
-
-to Add the taint again
-    kubectl taint nodes --all node-role.kubernetes.io/master
+kubectl get nodes --show-labels 
+or 
+kubectl describe node <nodename>
 
 ```
 
