@@ -6,7 +6,7 @@
 <p>
 
 ```bash
-Ans
+kubectl create ns cka-lab15
 ```
 
 </p>
@@ -21,7 +21,16 @@ Ans
 <p>
 
 ```yaml
-Ans
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd
+spec:
+  containers:
+  - name: httpd
+    image: httpd
+  nodeName: <>
+
 ```
 
 </p>
@@ -36,7 +45,8 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl label node <> size=large
+
 ```
 
 </p>
@@ -49,7 +59,19 @@ Ans
 <p>
 
 ```yaml
-Ans
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    size: large
 ```
 
 </p>
@@ -63,7 +85,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl delete ns cka-lab8
 ```
 
 </p>
