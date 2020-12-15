@@ -8,7 +8,12 @@
 <p>
 
 ```bash
-Ans
+To Remove the master node taint
+     kubectl taint nodes --all node-role.kubernetes.io/master-
+
+to Add the taint again
+    kubectl taint nodes --all node-role.kubernetes.io/master
+
 ```
 
 </p>
@@ -22,7 +27,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl label node worker01 disk=ssd
 ```
 
 </p>
@@ -36,7 +41,8 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl create deployment redis-prod --image=redis
+kubectl scale deployment redis-prod --replicas=2
 ```
 
 </p>
@@ -49,7 +55,8 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get pods -o wide
+on master and worker nodes
 ```
 
 </p>
@@ -61,8 +68,34 @@ Ans
   <details><summary>Show</summary>
 <p>
 
-```bash
-Ans
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: redis
+  template:
+    metadata:
+      labels:
+        run: redis
+    spec:
+      containers:
+      - image: redis
+        imagePullPolicy: Always
+        name: redis
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: disk
+                operator: In
+                values:
+                - ssd
 ```
 
 </p>
@@ -74,7 +107,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get pods -o wide 
 ```
 
 </p>
@@ -86,8 +119,33 @@ Ans
 <details><summary>Show</summary>
 <p>
 
-```bash
-Ans
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: nginx
+  template:
+    metadata:
+      labels:
+        run: nginx
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/master
+                operator: Exists
+
 ```
 
 </p>
