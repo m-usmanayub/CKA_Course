@@ -77,7 +77,7 @@ spec:
 </p>
 </details>
 
-5.  Delete the namespace cka-lab8 after completing the lab.
+5.  Delete the namespace cka-lab15 after completing the lab.
 
 
 
@@ -85,7 +85,7 @@ spec:
 <p>
 
 ```bash
-kubectl delete ns cka-lab8
+kubectl delete ns cka-lab15
 ```
 
 </p>
