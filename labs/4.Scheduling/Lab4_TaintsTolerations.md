@@ -6,7 +6,7 @@
 <p>
 
 ```bash
-Ans
+kubectl get nodes -o yaml or kubectl describe node <nodename>
 ```
 
 </p>
@@ -19,7 +19,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl taint nodes <enter worker node name here> size=medium:NoSchedule
 ```
 
 </p>
@@ -32,7 +32,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl run nginx-med --image=nginx
 ```
 
 </p>
@@ -45,7 +45,7 @@ Ans
 <p>
 
 ```bash
-Ans
+The pod is in pending state
 ```
 
 </p>
@@ -57,8 +57,20 @@ Ans
 <details><summary>Show</summary>
 <p>
 
-```bash
-Ans
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+spec:
+  containers:
+  - image: redis
+    name: redis
+  tolerations:
+  - key: size
+    value: medium
+    effect: NoSchedule
+    operator: Equal
 ```
 
 </p>
@@ -71,7 +83,7 @@ Ans
 <p>
 
 ```bash
-Ans
+
 ```
 
 </p>
