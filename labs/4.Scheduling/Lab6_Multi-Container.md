@@ -8,7 +8,8 @@
 <p>
 
 ```bash
-Ans
+kubectl create ns cka-lab19
+
 ```
 
 </p>
@@ -35,8 +36,21 @@ name: consul
 <details><summary>Show</summary>
 <p>
 
-```bash
-Ans
+```yaml
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: multi-container-pod
+  namespace: cka-lab19
+spec:
+  containers: 
+  - image: nginx:alpine
+    name: nginx
+  - name: redis
+    image: redis:alpine
+  - image: consul
+    name: consul
+
 ```
 
 </p>
@@ -48,7 +62,9 @@ Ans
 <p>
 
 ```bash
-Ans
+
+kubectl delete ns cka-lab19
+
 ```
 
 </p>
