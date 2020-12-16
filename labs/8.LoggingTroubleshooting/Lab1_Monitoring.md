@@ -6,7 +6,7 @@
 <p>
 
 ```bash
-Ans
+Check the slides for the deployment
 ```
 
 </p>
@@ -20,7 +20,8 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl top node 
+kubectl top pod
 ```
 
 </p>
@@ -29,28 +30,8 @@ Ans
 3.  Find out the Pod with highest CPU utilization and save the pod name in a file cpu.pod at /tmp
     
 
-  <details><summary>Show</summary>
-<p>
-
-```bash
-Ans
-```
-
-</p>
-</details>
-
 4.  Find out the pod with lowest memory utilization and save the pod name in a file mem.pod at /tmp
     
-<details><summary>Show</summary>
-<p>
-
-```bash
-Ans
-```
-
-</p>
-</details>
-  
 
 5.  Identify the node with highest CPU utilization
     
@@ -58,7 +39,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl top node --sort-by=cpu
 ```
 
 </p>
@@ -72,7 +53,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl top node --sort-by=memory
 ```
 
 </p>
