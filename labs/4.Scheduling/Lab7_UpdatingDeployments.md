@@ -6,7 +6,7 @@
 <p>
 
 ```bash
-Ans
+kubectl create ns cka-lab20
 ```
 
 </p>
@@ -18,8 +18,30 @@ Ans
 <details><summary>Show</summary>
 <p>
 
-```bash
-Ans
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: nginx
+  name: nginx-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deploy
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-deploy
+    spec:
+      containers:
+      - image: nginx:1.17
+        name: nginx
+        ports: 
+        - containerPort: 80
+
 ```
 
 </p>
@@ -32,7 +54,9 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl expose deployment nginx-deploy --port=80 --target-port=80 
+
+then edit the service and change the type to NodePort 
 ```
 
 </p>
@@ -46,7 +70,15 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl scale deployment nginx-deploy --replicas=5
+
+kubectl rollout status deployment nginx-deploy
+
+kubectl get deploy
+
+kubectl get pods
+
+kubectl set image deploy/nginx-deploy nginx=nginx:1.19
 ```
 
 </p>
@@ -60,7 +92,8 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl rollout history deployment nginx-deploy
+kubectl rollout undo deployment nginx-deploy
 ```
 
 </p>
