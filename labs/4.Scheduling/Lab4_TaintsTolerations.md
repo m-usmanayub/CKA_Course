@@ -55,6 +55,7 @@ The pod is in pending state
 5.  How can we make the pod to run? Create another pod with correct definition using image redis and toleration to run on worker node
     
 <details><summary>Show</summary>
+
 <p>
 
 ```yaml
@@ -74,15 +75,21 @@ spec:
 ```
 
 </p>
+
 </details>
   
 
 6.  Remove the taint of the master node
     
 <details><summary>Show</summary>
+
+
 <p>
 
+
 ```bash
+
+kubectl taint nodes master/controlplane node-role.kubernetes.io/master:NoSchedule-
 
 ```
 
@@ -92,15 +99,7 @@ spec:
 
 7.  Check the first pod must be running now on master
     
-<details><summary>Show</summary>
-<p>
 
-```bash
-Ans
-```
-
-</p>
-</details>
   
 
 8.  Remove the taint of the worker node and add the taint of the master node back
@@ -109,7 +108,11 @@ Ans
 <p>
 
 ```bash
-Ans
+remove taint from the worker
+kubectl taint nodes <enter worker node name here> size=medium:NoSchedule-
+
+Add the taint back on the master
+kubectl taint nodes master/controlplane node-role.kubernetes.io/master:NoSchedule
 ```
 
 </p>
