@@ -7,7 +7,27 @@
 <p>
 
 ```bash
-Ans
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: nginx
+  name: nginx-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-deploy
+  template:
+    metadata:
+      labels:
+        app: nginx-deploy
+    spec:
+      containers:
+      - image: nginx:1.18.0
+        name: nginx
+        ports: 
+        - containerPort: 80
 ```
 
 </p>
@@ -20,7 +40,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl get deploy nginx-deploy -o yaml
 ```
 
 </p>
@@ -33,7 +53,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl rollout status deploy nginx-deploy
 ```
 
 </p>
@@ -45,7 +65,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl set image deploy nginx-deploy nginx=nginx:1.19
 ```
 
 </p>
@@ -58,7 +78,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl rollout history deploy nginx-deploy
 ```
 
 </p>
@@ -72,7 +92,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl rollout undo deploy nginx-deploy
 ```
 
 </p>
@@ -85,7 +105,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl set image deploy nginx-deploy nginx=nginx:cka
 ```
 
 </p>
@@ -97,7 +117,8 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl rollout status deploy nginx-deploy
+kubectl rollout history deploy nginx-deploy
 ```
 
 </p>
@@ -111,19 +132,9 @@ Ans
 <p>
 
 ```bash
-Ans
-```
-
-</p>
-</details>
-
-10.  Scale the deployment to 4 replicas
-    
-<details><summary>Show</summary>
-<p>
-
-```bash
-Ans
+kubectl rollout undo deploy nginx-deploy --to-revision=
+kubectl describe deploy nginx-deploy | grep Image:
+kubectl rollout status deploy nginx-deploy```
 ```
 
 </p>
@@ -136,7 +147,7 @@ Ans
 <p>
 
 ```bash
-Ans
+kubectl delete deploy nginx-deploy
 ```
 
 </p>
