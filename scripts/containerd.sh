@@ -30,6 +30,6 @@ sudo apt-get update && sudo apt-get install -y containerd.io
 sudo mkdir -p /etc/containerd
 sudo containerd config default | sudo tee /etc/containerd/config.toml
 
-sed -i.bak 's/systemd_cgroup = false/systemd_cgroup = true/' /etc/containerd/config.toml
+sed -i.bak '/options*/a\            SystemdCgroup = true' config.toml
 
 sudo systemctl restart containerd
