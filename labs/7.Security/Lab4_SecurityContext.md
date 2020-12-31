@@ -92,4 +92,4 @@ spec:
 ```bash
 date -s '31 DEC 2019 12:00:00'
 ```
-kubectl exec -it ubuntu-sleeper -- date -s '31 DEC 2019 12:00:00'
+kubectl exec -it sleep-pod -- date -s '31 DEC 2019 12:00:00'
